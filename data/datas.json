@@ -1,0 +1,20 @@
+{
+    "6b02d0f0-93f7-4e45-87a7-cf10b2288915": {
+        "lastname": "Doe",
+        "firstname": "John",
+        "mlv": 0,
+        "aig": 0
+    },
+    "d1b5981c-be8c-4e2d-a30d-f8b3fb47796c": {
+        "lastname": "Smith",
+        "firstname": "Jane",
+        "mlv": 0,
+        "aig": 0
+    },
+    "627d4ccb-7a36-4b71-acf0-1844b7bdd6ba": {
+        "lastname": "Johnson",
+        "firstname": "Bob",
+        "mlv": 0,
+        "aig": 0
+    }
+}
