@@ -14,6 +14,13 @@ def index():
 def connect() :
     pass
 
+@app.route('/resultats')
+def resultats() :
+    return render_template('result.html')
+
+@app.route('/processResp', methods=['POST'])
+def processResp() :
+    print(request.form)
 
 
 # Run the Flask application
