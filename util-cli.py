@@ -7,7 +7,7 @@ def main() :
     parser = argparse.ArgumentParser()
     parser.add_argument('command', choices=['initjson'], help="Permet de générer le json model avec la population")
     parser.add_argument('-f', '--file', help='Chemin de destination du nouveau json', default='data/datas.json')
-    parser.add_argument('-s', '--source', help='Chemin d\'un csv source [nom;prenom\\n]')
+    parser.add_argument('-s', '--source', help='Chemin d\'un csv source [nom;prenom]')
     args = parser.parse_args()
 
     if args.command == 'initjson':
@@ -28,7 +28,8 @@ def initjson(args) :
 
         for row in sourceDataReader :
             sourceData[str(uuid.uuid4())] = {
-                'lastname' : row[0],
+                'anno_id' : str(uuid.uuid4()),
+                'lastname' : row[0][0],
                 'firstname' : row[1],
                 'mlv' : 0,
                 'aig' : 0

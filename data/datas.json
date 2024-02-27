@@ -1,19 +1,22 @@
 {
-    "6b02d0f0-93f7-4e45-87a7-cf10b2288915": {
-        "lastname": "Doe",
-        "firstname": "John",
+    "937f9e97-9f52-4977-aca3-c51b8982b847": {
+        "anno_id": "1133d7c5-7b75-4421-aa9a-cb28ba17c7a5",
+        "lastname": "J",
+        "firstname": "Doe",
         "mlv": 0,
         "aig": 0
     },
-    "d1b5981c-be8c-4e2d-a30d-f8b3fb47796c": {
-        "lastname": "Smith",
-        "firstname": "Jane",
+    "ce9bb601-0897-4c5a-a8e0-d6e3030fc0cf": {
+        "anno_id": "ecdd9eae-8cc4-4e77-b939-64b934ec02d1",
+        "lastname": "J",
+        "firstname": "Smith",
         "mlv": 0,
         "aig": 0
     },
-    "627d4ccb-7a36-4b71-acf0-1844b7bdd6ba": {
-        "lastname": "Johnson",
-        "firstname": "Bob",
+    "c3e933bd-a5c2-4e6a-b681-8f2934c38e77": {
+        "anno_id": "66ffdeb4-f57d-450d-9fd5-7fa4764261f2",
+        "lastname": "B",
+        "firstname": "Johnson",
         "mlv": 0,
         "aig": 0
     }

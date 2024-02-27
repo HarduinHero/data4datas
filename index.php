@@ -1,18 +1,26 @@
+<?php
+    $json = file_get_contents('data/datas.json');
+    $json_data = json_decode($json,true);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="static/css/style.css">
     <title>D4D</title>
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="/static/js/index.js"></script>
 </head>
 <body>
     <h1>Data for Datas</h1>
     <h2>Le test de la malveillance #1</h2>
 
+    
     <section id="answerSection">
-
+        
+    <hr>
+        
         <datalist id="markers">
             <option value="-10"></option>
             <option value="-5"></option>
@@ -25,8 +33,9 @@
             Ce test a pour objectif d'établir de manière empirique une mesure de l'aigreur ainsi que de la malveillance
             (d'autres indicateurs pourront être ajouté dans le futur) de la classe. Pour cela, la
             méthode choisie consiste à ce que chaque membre de la classe note l'ensemble des membres (lui-même compris).
-            Sur une échelle entière allant de -10 à 10. Où -10 = bienveillance MAX et 10 = malveillance MAX. Afin de 
-            diminuer le biais de définition, merci de garder en tête les définitions données ci-dessous.
+            Sur une échelle entière allant de -10 à 10. Où -10 = bienveillance MAX et 10 = malveillance MAX. Afin de
+            diminuer le biais de définition, merci de garder en tête les définitions données ci-dessous.<br>
+            Seule votre dernière réponse est prise en compte.
         </p>
         <p>
             <strong>MALVEILLANCE</strong> : <br>
@@ -42,28 +51,17 @@
             &nbsp;&nbsp;&nbsp;&nbsp;<i>Ex : "Face aux succès de ses collègues, Jean exprimait régulièrement son aigreur en faisant des commentaires
             sarcastiques et en minimisant leurs réalisations, reflétant ainsi un sentiment de frustration et d'amertume."</i>
         </p>
-        <form action="processResp" method="post">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Prenom</th>
-                        <th>Nom</th>
-                        <th>Malveillance</th>
-                        <th>Aigreur</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for id, info in users.items() %}
-                    <tr id="line-{{id}}">
-                        <td>{{ info.firstname }}</td>
-                        <td>{{ info.lastname }}</td>
-                        <td id="cell-mlv-{{ id }}"><i>-10 </i><input type="range" name="mlv-{{ id }}" id="range-mlv-{{ id }}" min="-10" max="10" value="0" step="1" list="markers"><i> 10</i></td>
-                        <td id="cell-aig-{{ id }}"><i>-10 </i><input type="range" name="aig-{{ id }}" id="range-aig-{{ id }}" min="-10" max="10" value="0" step="1" list="markers"><i> 10</i></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <input type="submit" value="Envoyer">
+        <hr>
+        <form action="question.php" method="post">
+            <?php if (isset($_GET['erruid'])) {
+                 echo '<p class="err">Identifiant invalide, petit cocain.</p>';
+            }?>
+            <p>
+                <label for="idfield">uuid personel :</label>
+                <input id="idfield" type="text" name="uid" placeholder="ex : 6b02d0f0-93f7-4e45-87a7-cf10b2288915">
+                <input type="submit" value="Accéder">
+            </p>
+    
         </form>
     </section>
 </body>

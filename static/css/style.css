@@ -32,3 +32,27 @@ button#send {
     width: 100%;
     height: 30px;
 }
+#validationbutton {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+}
+#idfield {
+    padding: 3px;
+    width: 40%;
+    min-width: 275px;
+}
+input {
+    background-color: rgb(54, 54, 54);
+    border: 1px solid grey;
+    color: rgb(190, 190, 190);
+}
+input:hover {
+    background-color: grey;
+    border: 1px solid rgb(54, 54, 54);
+    color: rgb(39, 39, 39);
+
+}
+p.err {
+    color: rgb(255, 57, 57);
+}
